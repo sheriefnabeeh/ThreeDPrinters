@@ -1,0 +1,13 @@
+numberOfPartsProduced= 3
+mass_material=3
+time_setupBuild=0
+time_build=0
+cost_depreciation=0
+cost_preProcessingPerPart=0
+cost_machineOperation=0
+cost_materialPerKG=0
+cost_processingPerPart=0
+cost_operatorPerHour=0
+cost_postProcessingPerBuild=0
+cost_heatTreatmentPerBuild=0
+cost_postProcessingPerPart=0  
