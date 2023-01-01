@@ -12,7 +12,8 @@ def main():
     threeDPrinter =  ThreeDP.ThreeDP.ThreeDPs(threeDPrinterData) 
     threeDPrinter.updateTotalCost()    
     
-    print("Program Finished")
+    optimizer = Optimization.Optimizer.Optimizer()
+    print(optimizer)
 
 
 if __name__ == "__main__":

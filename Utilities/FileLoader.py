@@ -20,6 +20,8 @@ class FileLoader:
 
         with open(self._fileName) as cache:
             for line in cache.readlines():
+                if(not line.strip()):
+                    break
                 key, value = line.rstrip("\n").split("=")
                 self._data[key] = int(value)
                 
