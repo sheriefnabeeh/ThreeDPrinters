@@ -23,7 +23,7 @@ class FileLoader:
                 if(not line.strip()):
                     break
                 key, value = line.rstrip("\n").split("=")
-                self._data[key] = int(value)
+                self._data[key] = str(value).replace('"', '').strip() 
                 
         return self._data
             

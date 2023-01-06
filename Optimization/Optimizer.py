@@ -4,7 +4,7 @@
 # Constraints  : Cost < Cost_InjectionMoulding OR < Cost_Importing
 #             : Time < Time_Importing/Injection
 #             : Cost = demand x Cost_singleProduct
-#             : Time = (demand x Time_part) / Size_3DPs
+#             : Time = (demand x Time_part) / NumberOf3DPs
 #             : Cost_singleProduct = cost_ProcessingPerPart + cost_machineOperation + cost_operatorPerHour
 #                 + cost_postProcessingPerBuild + cost_heatTreatmentPerBuild + cost_postProcessingPerPart
 #             : cost_machineOperation = PrinterCapacity x Kw_Price x OperatingHrs_Per_Part
@@ -15,7 +15,7 @@
 #             : cost_postProcessingPerPart = 0 for now
 #             : Time_part = time_build + OperatingHrs_Per_Part = time_production_perPart (with respect to weight_product)
 #             : Time_operation = 1/3 Day // neglect for now
-#             : Size_3DPs = number of threeDP available in cairo
+#             : NumberOf3DPs = number of threeDP available in cairo
 
 
 from pulp import LpProblem, LpStatus, lpSum, LpVariable, LpMaximize
@@ -33,7 +33,6 @@ class Optimizer:
         model += ( time <= 60, "time_Importing_constraint")
         model += ( cost == 10*demand, "cost_demand_constraint")
         model += ( time == 10/3*demand, "time_demand_constraint")
-        
         model += lpSum([demand])        
         
         status = model.solve()

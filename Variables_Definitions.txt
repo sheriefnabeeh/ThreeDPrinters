@@ -1,36 +1,25 @@
 demand_in_no_parts= 3
-Size_3DPs= 1
+demand_beginning= 0
+demand_end= 100
+NumberOf3DPs= 1
 weight_material_part=3
 OperatingHrs_Per_Part=0
-time_build=0
-cost_depreciation=0
+OperatingHrs_beginning= 0
+OperatingHrs_end= 0
+depreciation_percentage=0
 cost_preProcessingPerPart=0
 printerCapacity=0
 Kw_price=0
 material_raw_product_price_gram= 20
-cost_materialPerG=0
 cost_operatorPerHour=0
 cost_processingPerPart=0
-cost_operatorPerHour=0
+cost_processingPerPart_beginning= 0
+cost_processingPerPart_end= 0
 cost_postProcessingPerBuild=0
 cost_heatTreatmentPerBuild=0
 cost_postProcessingPerPart=0  
+plotTitle= "Two lines on same graph"
 
 
-# Initial objective function is : Minimize {Time + Cost}
+#   def generateData(type, beginning, limit, step):
 
-# Constraints  : Cost < Cost_InjectionMoulding OR < Cost_Importing
-#             : Time < Time_Importing/Injection
-#             : Cost = demand x Cost_singleProduct
-#             : Time = (demand x Time_part) / Size_3DPs
-#             : Cost_singleProduct = cost_ProcessingPerPart + cost_machineOperation + cost_operatorPerHour
-#                 + cost_postProcessingPerBuild + cost_heatTreatmentPerBuild + cost_postProcessingPerPart
-#             : cost_machineOperation = PrinterCapacity x Kw_Price x OperatingHrs_Per_Part
-#             : cost_postProcessingPerBuild = 0 for now
-#             : cost_ProcessingPerPart = material_raw_product_price_gram/g x weight_product
-#             : cost_operatorPerHour
-#             : cost_heatTreatmentPerBuild = 0 for now
-#             : cost_postProcessingPerPart = 0 for now
-#             : Time_part = time_build + OperatingHrs_Per_Part = time_production_perPart (with respect to weight_product)
-#             : Time_operation = 1/3 Day // neglect for now
-#             : Size_3DPs = number of threeDP available in cairo

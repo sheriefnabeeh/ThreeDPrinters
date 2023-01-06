@@ -1,19 +1,20 @@
 import Optimization.Optimizer
 import Utilities.InputGenerator
-import Utilities.FileLoader
+import Utilities.FileLoader as utils
 import Utilities.JsonParser
-import ThreeDP.ThreeDP
-
+import ThreeDP.ThreeDP as printer
+import Utilities.Plotting as plotty
 
 def main():
-    fileLoaderObject = Utilities.FileLoader.FileLoader("Variables_Definitions.txt")
-    threeDPrinterData = fileLoaderObject.fetch()
+    fileLoaderObject = utils.FileLoader("Variables_Definitions.txt")
+    dataFetched = fileLoaderObject.fetch()
 
-    threeDPrinter =  ThreeDP.ThreeDP.ThreeDPs(threeDPrinterData) 
+    threeDPrinter =  printer.ThreeDPs(dataFetched) 
     threeDPrinter.updateTotalCost()    
     
-    optimizer = Optimization.Optimizer.Optimizer()
-    print(optimizer)
+    
+    drawer = plotty.Drawer(dataFetched)
+    drawer.draw()
 
 
 if __name__ == "__main__":
