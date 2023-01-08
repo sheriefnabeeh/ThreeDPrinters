@@ -1,25 +1,23 @@
-demand_in_no_parts= 3
-demand_beginning= 0
-demand_end= 100
+demand_in_no_parts=2
 NumberOf3DPs= 1
 weight_material_part=3
-OperatingHrs_Per_Part=0
-OperatingHrs_beginning= 0
-OperatingHrs_end= 0
-depreciation_percentage=0
+OperatingTime_Per_Part= 10
+depreciation_percentage=0.2
 cost_preProcessingPerPart=0
-printerCapacity=0
-Kw_price=0
+printerCapacity=0.240
+Kw_price=0.85
 material_raw_product_price_gram= 20
-cost_operatorPerHour=0
-cost_processingPerPart=0
-cost_processingPerPart_beginning= 0
-cost_processingPerPart_end= 0
+cost_operatorPerHour=1
 cost_postProcessingPerBuild=0
 cost_heatTreatmentPerBuild=0
 cost_postProcessingPerPart=0  
 plotTitle= "Two lines on same graph"
+beginning_range= 0
+end_range= 10
+step_in_range=1
+range_type=random
+Range_variable_to_loop_on= Demand
 
-
-#   def generateData(type, beginning, limit, step):
+#options for type : range OR random
+#options for Range_To_loop_on : Demand OR cost_processingPerPart OR OperatingHrs
 

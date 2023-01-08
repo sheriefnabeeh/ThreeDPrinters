@@ -13,38 +13,35 @@ import numpy as np
 
 
 def generateData(type, beginning, limit, step):
-    if str(type).capitalize().find("RANGE"):
+    typeCleaned = str(type).strip().lower()
+    if typeCleaned.__contains__("range"):
+        print( "generating range")
         return np.arange(beginning, limit, step).tolist()
-    elif str(type).capitalize().find("RANDOM_INT"):
-        return np.random.randint(beginning, limit)
-    elif str(type).capitalize().find("RANDOM"):
-        return np.random.rand(beginning, limit)
+    elif typeCleaned.__contains__("random"):
+        print( "generating random data")
+        return np.random.random((limit)) * limit
+    else:
+        raise Exception("the following value passed and is not correct: " + typeCleaned)
 
 class Drawer:
 
     _xLabel = "x - axis"
     _yLabel = "y - axis"
+    _y2Label = "y2 - axis"
     _line1Label = "line 1"
-    _line2Label = "line 1"
+    _line2Label = "line 2"
     _plotTitle = "Two lines on same graph"
-    _x_Data = [1, 2, 3]
-    _y_Data = [1, 4, 1]
-    _y2_Data = [4, 4, 2]
 
-    def __init__(self, data):
-
-        self._xLabel = data["xlabel"]
-        self._yLabel = data["ylabel"]
-        self._line1Label = data["line1label"]
-        self._line2Label = data["line2label"] or "line 2"
-        self._plotTitle = data["plotTitle"]
-        self._x_Data = data["x_Data"] or []
-        self._y_Data = data["y_Data"] or []
-        self._y2_Data = data["y2_Data"] or []
+    def setGraphVariables(self, x_label, y_label, y2_label):
+        self._xLabel = x_label
+        self._yLabel = y_label
+        self._y2Label = y2_label
         
-        # ax1.tick_params(axis='y', labelcolor=color)
+    def __init__(self, title):
+        self._plotTitle = title
     
-    def draw(self) -> None:
+    def draw(self, tupleData) -> None:
+        
         color = 'tab:red'
         fig, firstAxis = plt.subplots()
         # naming the x axis
@@ -53,25 +50,24 @@ class Drawer:
         firstAxis.set_ylabel(self._yLabel, color=color)
         # giving a title to my graph
         firstAxis.set_title(self._plotTitle)
-        # line 1 points
-        x1 = self._x_Data
-        y1 = self._y_Data
-        # plotting the line 1 points 
+        
+        x1 = tupleData[0]
+        y1 = tupleData[1]
 
         firstAxis.plot(x1, y1, label=self._line1Label, color=color)
+        firstAxis.tick_params(axis='y', labelcolor=color)
 
-        if (self._y2_Data):
+        if (tupleData[2]):
             secondAxis = firstAxis.twinx()
             # line 2 points
-            y2 = self._y2_Data
+            y2 = tupleData[2]
 
             color = 'tab:blue'
-            secondAxis.set_ylabel(self._yLabel, color=color)
+            secondAxis.set_ylabel(self._y2Label, color=color)
             # plotting the line 2 points 
-            secondAxis.plot(x1, y2, label=self._line2Label)
-
-        # show a legend on the plot
-        plt.legend()
+            secondAxis.plot(x1, y2, label=self._line2Label, color=color)
+            secondAxis.tick_params(axis='y', labelcolor=color)
+            
         plt.grid('true')
         # function to show the plot
         fig.tight_layout()
