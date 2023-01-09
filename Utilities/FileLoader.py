@@ -16,7 +16,7 @@ class FileLoader:
             json.dump(_cache, cache, indent=4)
 
 
-    def fetch(self):
+    def fetchDataFromFile(self):
 
         with open(self._fileName) as cache:
             for line in cache.readlines():

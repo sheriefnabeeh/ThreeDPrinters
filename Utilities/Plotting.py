@@ -1,10 +1,10 @@
-# This module here is required for Plotting the demand_in_no_parts against the Cost and Time :
+# This module here is required for Plotting the demand_if_range_not_used against the Cost and Time :
 
-# once in a 3D manner where demand_in_no_parts, Cost and time are represented.
+# once in a 3D manner where demand_if_range_not_used, Cost and time are represented.
 # once in the 2D representation of the same plot.
 
 # The main Point we need :
-#   Plot the cost/demand_in_no_parts until we find the point where
+#   Plot the cost/demand_if_range_not_used until we find the point where
 #   the cost hits the cost of a commercially printed object
 
 from enum import Enum
@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def generateData(type, beginning, limit, step):
+def createListOfValuesToLoopOn(type, beginning, limit, step):
     typeCleaned = str(type).strip().lower()
     if typeCleaned.__contains__("range"):
         print( "generating range")
@@ -32,7 +32,7 @@ class Drawer:
     _line2Label = "line 2"
     _plotTitle = "Two lines on same graph"
 
-    def setGraphVariables(self, x_label, y_label, y2_label):
+    def setPlot_X_and_Y_Names(self, x_label, y_label, y2_label):
         self._xLabel = x_label
         self._yLabel = y_label
         self._y2Label = y2_label

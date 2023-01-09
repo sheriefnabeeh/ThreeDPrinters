@@ -7,7 +7,7 @@
 #             : Time = (demand x Time_part) / NumberOf3DPs
 #             : Cost_singleProduct = cost_ProcessingPerPart + cost_machineOperation + cost_operatorPerHour
 #                 + cost_postProcessingPerBuild + cost_heatTreatmentPerBuild + cost_postProcessingPerPart
-#             : cost_machineOperation = PrinterCapacity x Kw_Price x OperatingTime_Per_Part
+#             : cost_machineOperation = PrinterCapacity x cost_power_KW x OperatingTime_Per_Part
 #             : cost_postProcessingPerBuild = 0 for now
 #             : cost_ProcessingPerPart = material_raw_product_price_gram/g x weight_product
 #             : cost_operatorPerHour

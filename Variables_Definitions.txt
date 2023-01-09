@@ -1,22 +1,22 @@
-demand_in_no_parts=2
+demand_if_range_not_used=2
 NumberOf3DPs= 1
-weight_material_part=3
+weight_of_product_after_production=3
 OperatingTime_Per_Part= 10
 depreciation_percentage=0.2
 cost_preProcessingPerPart=0
 printerCapacity=0.240
-Kw_price=0.85
+cost_power_KW=0.85
 material_raw_product_price_gram= 20
 cost_operatorPerHour=1
 cost_postProcessingPerBuild=0
 cost_heatTreatmentPerBuild=0
 cost_postProcessingPerPart=0  
 plotTitle= "Two lines on same graph"
-beginning_range= 0
-end_range= 10
+beginningValueFor_X_axis= 0
+endingValueFor_X_axis= 10
 step_in_range=1
-range_type=random
-Range_variable_to_loop_on= Demand
+type_of_data_to_be_generated=random
+x_axis_variable= Demand
 
 #options for type : range OR random
 #options for Range_To_loop_on : Demand OR cost_processingPerPart OR OperatingHrs
