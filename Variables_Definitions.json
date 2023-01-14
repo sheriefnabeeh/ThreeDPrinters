@@ -1,0 +1,60 @@
+{
+    "What_Needs_To_Be_On_The_Plot": "3DPrinted_Products",
+    "plotTitle" : "Two lines on same graph",
+    "beginningValueFor_X_axis":"0",
+    "endingValueFor_X_axis": "10",
+    "step_in_range":"1",
+    "type_of_data_to_be_generated":"random",
+    "x_axis_variable": "Demand",
+    
+    "3DPrinted_Products": [
+        {
+            "demand_if_range_not_used": "2",
+            "NumberOf3DPs": "1",
+            "weight_of_product_after_production": "3",
+            "OperatingTime_Per_Part": "10",
+            "depreciation_percentage": "0.2",
+            "cost_preProcessingPerPart": "0",
+            "printerCapacity": "0.240",
+            "cost_power_KW": "0.85",
+            "material_raw_product_price_gram": "20",
+            "cost_operatorPerHour": "1",
+            "cost_postProcessingPerBuild": "0",
+            "cost_heatTreatmentPerBuild": "0",
+            "cost_postProcessingPerPart": "0"
+        },
+        {
+            "demand_if_range_not_used": "2",
+            "NumberOf3DPs": "1",
+            "weight_of_product_after_production": "3",
+            "OperatingTime_Per_Part": "10",
+            "depreciation_percentage": "0.2",
+            "cost_preProcessingPerPart": "0",
+            "printerCapacity": "0.240",
+            "cost_power_KW": "0.85",
+            "material_raw_product_price_gram": "20",
+            "cost_operatorPerHour": "1",
+            "cost_postProcessingPerBuild": "0",
+            "cost_heatTreatmentPerBuild": "0",
+            "cost_postProcessingPerPart": "0"
+        }
+    ],
+    "InjectionMoulding_Products": [
+        {
+            "price_of_stamba": "1000",
+            "demand_if_range_not_used": "2",
+            "OperatingTime_Per_stamba": "10",
+            "depreciation_percentage": "0.2",
+            "cost_power_KW": "0.85",
+            "cost_operatorPerHour": "1"
+        },
+        {
+            "price_of_stamba": "1000",
+            "demand_if_range_not_used": "2",
+            "OperatingTime_Per_stamba": "10",
+            "depreciation_percentage": "0.2",
+            "cost_power_KW": "0.85",
+            "cost_operatorPerHour": "1"
+        }
+    ]
+}
