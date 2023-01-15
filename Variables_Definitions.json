@@ -1,23 +1,23 @@
 {
     "What_Needs_To_Be_On_The_Plot": "3DPrinted_Products",
-    "plotTitle" : "Two lines on same graph",
+    "plotTitle" : "Single product price comparison",
     "beginningValueFor_X_axis":"0",
-    "endingValueFor_X_axis": "10",
+    "endingValueFor_X_axis": "3000",
     "step_in_range":"1",
-    "type_of_data_to_be_generated":"random",
+    "type_of_data_to_be_generated":"range",
     "x_axis_variable": "Demand",
 
     "3DPrinted_Products": [
         {
             "demand_if_range_not_used": "2",
             "NumberOf3DPs": "1",
-            "weight_of_product_after_production": "3",
+            "weight_of_product_after_production": "1",
             "OperatingTime_Per_Part": "10",
             "depreciation_percentage": "0.2",
             "cost_preProcessingPerPart": "0",
             "printerCapacity": "0.240",
-            "cost_power_KW": "0.85",
-            "material_raw_product_price_gram": "20",
+            "cost_power_KW": "0.1",
+            "material_raw_product_price_gram": "1",
             "cost_operatorPerHour": "1",
             "cost_postProcessingPerBuild": "0",
             "cost_heatTreatmentPerBuild": "0",
@@ -26,13 +26,13 @@
         {
             "demand_if_range_not_used": "2",
             "NumberOf3DPs": "1",
-            "weight_of_product_after_production": "3",
+            "weight_of_product_after_production": "1",
             "OperatingTime_Per_Part": "10",
             "depreciation_percentage": "0.2",
             "cost_preProcessingPerPart": "0",
             "printerCapacity": "0.240",
-            "cost_power_KW": "0.85",
-            "material_raw_product_price_gram": "20",
+            "cost_power_KW": "0.1",
+            "material_raw_product_price_gram": "4",
             "cost_operatorPerHour": "1",
             "cost_postProcessingPerBuild": "0",
             "cost_heatTreatmentPerBuild": "0",
@@ -41,22 +41,24 @@
     ],
     "InjectionMoulding_Products": [
         {
-            "price_of_stamba": "1000",
-            "demand_if_range_not_used": "2",
-            "OperatingTime_Per_stamba": "10",
+            "price_of_stamba": "5000",
+            "demand_if_range_not_used": "100",
+            "OperatingTime_StambaCreation": "2",
+            "OperatingTime_Per_stamba": "5",
             "depreciation_percentage": "0.2",
             "cost_power_KW": "0.85",
             "cost_operatorPerHour": "1",
-            "power_consumption": "2"
+            "power_consumption": "0.1"
         },
         {
-            "price_of_stamba": "1000",
-            "demand_if_range_not_used": "2",
+            "price_of_stamba": "2000",
+            "demand_if_range_not_used": "100",
+            "OperatingTime_StambaCreation": "10",
             "OperatingTime_Per_stamba": "10",
             "depreciation_percentage": "0.2",
-            "cost_power_KW": "0.85",
+            "cost_power_KW": "1",
             "cost_operatorPerHour": "1",
-            "power_consumption": "2"
+            "power_consumption": "0.1"
         }
     ]
 }

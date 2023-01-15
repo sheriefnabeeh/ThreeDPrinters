@@ -32,13 +32,13 @@ class ThreeDPrinterObject:
 #             : cost_postProcessingPerPart = 0 for now
 #             : Time_part = time_build + OperatingTime_Per_Part = time_production_perPart (with respect to weight_product)
 
-    def __calculateCostOfProcessingPerPart(self) -> int:
+    def __calculateCostOfMaterialPerPart(self) -> int:
         return self._material_raw_product_price_gram * (self._depreciation_percentage * self._mass_material + self._mass_material)
         
     def __calculateCostSingleProduct(self) -> int:
-        return (self.__calculateCostOfProcessingPerPart() + (self._printerCapacity * self._cost_KW * self._time_build) +
-                 self._cost_operatorPerHour + self._cost_postProcessingPerBuild + self._cost_heatTreatmentPerBuild +
-                 self._cost_postProcessingPerPart)
+        return (self.__calculateCostOfMaterialPerPart() + (self._printerCapacity * self._cost_KW * self._time_build) +
+                (self._cost_operatorPerHour * self._time_build) + self._cost_postProcessingPerBuild + self._cost_heatTreatmentPerBuild +
+                self._cost_postProcessingPerPart)
 
     def useAndCheckCorrectnessOfTheVariableOnXAxis(self, variableChanged, value):
         successValue = value
